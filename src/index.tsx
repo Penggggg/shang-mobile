@@ -8,7 +8,7 @@ class App extends React.PureComponent<{ }, { }> {
 
     render( ) {
         return <div>
-            <h1>Welcome!</h1>
+            <h3 className="title">Welcome!</h3>
             { this.props.children }
         </div>
     }

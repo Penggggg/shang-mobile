@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import  './couter.less';
 
 
 export default class Counter extends React.PureComponent< IProp, IState >{
@@ -29,9 +29,9 @@ export default class Counter extends React.PureComponent< IProp, IState >{
 
     render( ) {
         let { count } = this.state;
-        return <div>
-            <h3>{ count }</h3>
-            <button onClick={this.add}>++</button>
+        return <div className="c_counter">
+            <h3 className="title">{ count }</h3>
+            <button onClick={this.add}>+</button>
             <button onClick={this.del}>-</button>
         </div>
     }
