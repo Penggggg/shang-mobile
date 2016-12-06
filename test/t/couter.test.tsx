@@ -10,7 +10,7 @@ describe('Counter Test', ( ) => {
 
     it('Init Data', ( ) => {
         let c = shallow(<Counter />);
-        expect( c.find('h3').text( )).to.equal('1');;;;;;;;
+        expect( c.find('h3').text( )).to.equal('1');;;;;;;;;;
     });
 
     it('add button', ( ) => {
