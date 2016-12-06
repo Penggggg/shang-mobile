@@ -1,14 +1,27 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Router, Route, hashHistory } from 'react-router';
 
-class Test extends React.Component<{ }, { }> {
+import Counter from './t/couter.component';
+
+class App extends React.PureComponent<{ }, { }> {
+
     render( ) {
-        return <h1>123</h1>
+        return <div>
+            <h1>Welcome!</h1>
+            { this.props.children }
+        </div>
     }
 }
 
-ReactDOM.render(
-    <Test />,
+
+
+ReactDOM.render((
+    <Router history={ hashHistory } >
+        <Route path="/" component={ App } >
+            <Route path="couter" component={ Counter } ></Route>
+        </Route>
+    </Router>),
     document.getElementById('root')
 )
 
