@@ -25,7 +25,8 @@ gulp.task('push_daily', function( ) {
     CONFIG.version = newVer;
     console.log(CONFIG.version);
     git.checkout('daily/' + CONFIG.version, { args: '-b' }, function( ) {
-        git.exec({ args: 'add .' })
+        git.exec({ args: 'add .' });
+        git.exec({ args: 'commit -m daily'})
     })
 })
 
