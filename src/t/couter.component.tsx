@@ -18,6 +18,7 @@ export default class Counter extends React.PureComponent< IProp, IState >{
         this.setState({
             count: ++count
         })
+
     }
 
     del = ( ) => {

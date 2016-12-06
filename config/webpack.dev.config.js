@@ -26,11 +26,12 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
-          name: [ 'app', 'vendor' ]
+          name: [ 'vendor' ]
         }),
  
         new HtmlWebpackPlugin({
-          template: './src/index.html'
+          template: './src/index.html',
+          title: 'Shang'
         }), 
  
         new OpenBrowserPlugin({
