@@ -5,7 +5,7 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = {
     entry: {
         app: "./src/index.tsx",
-        vendor: './src/vendor'
+        vendor: ['react', 'react-dom', 'react-router']
     },
     output: {
         filename: "[name].js",
@@ -25,9 +25,7 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-          name: [ 'vendor' ]
-        }),
+        new webpack.optimize.CommonsChunkPlugin( 'vendor', 'vendor.js' ),
  
         new HtmlWebpackPlugin({
           template: './src/index.html',
@@ -39,7 +37,9 @@ module.exports = {
         }), 
  
         new webpack.DefinePlugin({
-            _ENV_: 'production'
+           'process.env': {
+				'ENV': JSON.stringify('develoption')
+			}
         })
     ],
 
