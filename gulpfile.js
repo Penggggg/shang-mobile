@@ -26,11 +26,12 @@ gulp.task('push_daily', function( ) {
     console.log(CONFIG.version);
     git.checkout('daily/' + CONFIG.version, { args: '-b' }, function( ) {
         git.add({ args: '-A' });
-        git.exec({ args: 'commit -m daily' }, function( ) {
-            git.exec({ args: 'push origin daily' + CONFIG.version }, function( ) {
-                fs.writeFileSync('./package.json', JSON.stringify( CONFIG ));
-                console.log('push done!')
-            })
+        // git.commit('daily'+CONFIG.version, { args: '-A' })
+        git.exec({ args: 'commit -am daily' }, function( ) {
+            // git.exec({ args: 'push origin daily' + CONFIG.version }, function( ) {
+            //     fs.writeFileSync('./package.json', JSON.stringify( CONFIG ));
+            //     console.log('push done!')
+            // })
         })
     })
 })
