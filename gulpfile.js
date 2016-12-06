@@ -26,7 +26,7 @@ gulp.task('push_daily', function( ) {
     console.log(CONFIG.version);
     git.checkout('daily/' + CONFIG.version, { args: '-b' }, function( ) {
         git.add({ args: '-A' });
-        git.commit('daily', {args: '-A --amend -s'})
+        git.commit('daily');
         //git.exec({ args: 'commit -am daily' }, function( ) {
             // git.exec({ args: 'push origin daily' + CONFIG.version }, function( ) {
             //     fs.writeFileSync('./package.json', JSON.stringify( CONFIG ));
